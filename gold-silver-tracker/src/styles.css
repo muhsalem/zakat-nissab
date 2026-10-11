@@ -1,0 +1,247 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+/*
+ * Design system — "Desert Luxe Minimal"
+ * Ivory sand paper, deep forest green, assay gold.
+ * All colors are oklch semantic tokens. Never hardcode colors in components.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Brand tokens */
+  --color-sand: var(--sand);
+  --color-cream: var(--cream);
+  --color-ink: var(--ink);
+  --color-forest: var(--forest);
+  --color-emerald: var(--emerald);
+  --color-gold: var(--gold);
+  --color-goldlight: var(--goldlight);
+
+  --color-chart-1: var(--gold);
+  --color-chart-2: var(--emerald);
+  --color-chart-3: var(--forest);
+  --color-chart-4: var(--goldlight);
+  --color-chart-5: var(--ink);
+
+  --font-sans: var(--font-arabic);
+  --font-arabic: "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --font-display: "Cairo", system-ui, sans-serif;
+  --font-calligraphy: "Amiri", "Aref Ruqaa", serif;
+  --font-latin: "Space Grotesk", ui-monospace, sans-serif;
+}
+
+:root,
+[data-theme="emerald"] {
+  --radius: 0.875rem;
+
+  /* Royal Emerald & Pure Pearl Alabaster Palette */
+  --sand: oklch(0.985 0.005 160); /* Pristine pearl ivory canvas */
+  --cream: oklch(1 0 0); /* Pure white card surface */
+  --ink: oklch(0.18 0.025 165); /* Deep obsidian charcoal typography */
+  --forest: oklch(0.32 0.092 162); /* Royal Andalusian Emerald (#064e3b) */
+  --emerald: oklch(0.48 0.118 162); /* Vibrant malachite green (#059669) */
+  --gold: oklch(0.72 0.145 78); /* 24K Assay Bullion Gold (#d97706) */
+  --goldlight: oklch(0.88 0.08 82); /* Warm champagne gold shimmer */
+
+  --background: var(--sand);
+  --foreground: var(--ink);
+  --card: var(--cream);
+  --card-foreground: var(--ink);
+  --popover: var(--cream);
+  --popover-foreground: var(--ink);
+  --primary: var(--forest);
+  --primary-foreground: oklch(0.99 0.005 160);
+  --secondary: oklch(0.96 0.012 162);
+  --secondary-foreground: var(--forest);
+  --muted: oklch(0.958 0.008 162);
+  --muted-foreground: oklch(0.48 0.025 165);
+  --accent: var(--gold);
+  --accent-foreground: oklch(0.2 0.04 78);
+  --destructive: oklch(0.55 0.2 27);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.2 0.025 165 / 10%);
+  --input: oklch(0.2 0.025 165 / 12%);
+  --ring: var(--forest);
+}
+
+[data-theme="sapphire"] {
+  --sand: oklch(0.984 0.006 250); /* Crisp celestial white */
+  --cream: oklch(1 0 0);
+  --ink: oklch(0.18 0.032 260); /* Deep midnight navy ink */
+  --forest: oklch(0.3 0.088 258); /* Sovereign Royal Navy */
+  --emerald: oklch(0.46 0.115 245); /* Cyan sapphire */
+  --gold: oklch(0.72 0.145 78); /* Assay bullion gold */
+  --goldlight: oklch(0.88 0.08 82);
+
+  --background: var(--sand);
+  --foreground: var(--ink);
+  --card: var(--cream);
+  --card-foreground: var(--ink);
+  --popover: var(--cream);
+  --popover-foreground: var(--ink);
+  --primary: var(--forest);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.958 0.012 250);
+  --secondary-foreground: var(--forest);
+  --muted: oklch(0.958 0.008 250);
+  --muted-foreground: oklch(0.48 0.03 260);
+  --accent: var(--gold);
+  --accent-foreground: oklch(0.2 0.04 78);
+  --destructive: oklch(0.55 0.2 27);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.2 0.03 260 / 10%);
+  --input: oklch(0.2 0.03 260 / 12%);
+  --ring: var(--forest);
+}
+
+[data-theme="dark-emerald"] {
+  --sand: oklch(0.14 0.025 165); /* Deep nocturnal pine */
+  --cream: oklch(0.18 0.028 165); /* Elevated card dark pine */
+  --ink: oklch(0.96 0.01 160); /* Crisp moonlight white text */
+  --forest: oklch(0.55 0.14 162); /* Radiant emerald button */
+  --emerald: oklch(0.62 0.13 162); /* Bright malachite */
+  --gold: oklch(0.76 0.155 80); /* Radiant glowing gold */
+  --goldlight: oklch(0.88 0.1 82);
+
+  --background: var(--sand);
+  --foreground: var(--ink);
+  --card: var(--cream);
+  --card-foreground: var(--ink);
+  --popover: var(--cream);
+  --popover-foreground: var(--ink);
+  --primary: var(--forest);
+  --primary-foreground: oklch(0.12 0.02 165);
+  --secondary: oklch(0.22 0.03 165);
+  --secondary-foreground: var(--ink);
+  --muted: oklch(0.22 0.03 165);
+  --muted-foreground: oklch(0.72 0.02 165);
+  --accent: var(--gold);
+  --accent-foreground: oklch(0.12 0.02 165);
+  --destructive: oklch(0.6 0.22 27);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.96 0.01 160 / 12%);
+  --input: oklch(0.96 0.01 160 / 14%);
+  --ring: var(--gold);
+}
+
+[data-theme="desert"] {
+  --sand: oklch(0.9503 0.0184 86.15);
+  --cream: oklch(0.9823 0.0069 88.64);
+  --ink: oklch(0.2689 0.0242 164.16);
+  --forest: oklch(0.3102 0.0471 168.59);
+  --emerald: oklch(0.4744 0.0847 167.15);
+  --gold: oklch(0.706 0.1199 85.41);
+  --goldlight: oklch(0.8485 0.0867 89.06);
+
+  --background: var(--sand);
+  --foreground: var(--ink);
+  --card: var(--cream);
+  --card-foreground: var(--ink);
+  --popover: var(--cream);
+  --popover-foreground: var(--ink);
+  --primary: var(--forest);
+  --primary-foreground: var(--cream);
+  --secondary: oklch(0.9503 0.0184 86.15);
+  --secondary-foreground: var(--ink);
+  --muted: oklch(0.9503 0.0184 86.15);
+  --muted-foreground: oklch(0.52 0.02 164);
+  --accent: var(--gold);
+  --accent-foreground: var(--ink);
+  --destructive: oklch(0.55 0.19 27);
+  --destructive-foreground: var(--cream);
+  --border: oklch(0.2689 0.0242 164.16 / 12%);
+  --input: oklch(0.2689 0.0242 164.16 / 14%);
+  --ring: var(--gold);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-arabic);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+  }
+}
+
+@utility num {
+  font-family: var(--font-latin);
+  direction: ltr;
+  unicode-bidi: isolate;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+@utility eyebrow {
+  font-family: var(--font-latin);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+@utility card-surface {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  box-shadow:
+    0 1px 3px 0 rgb(0 0 0 / 0.03),
+    0 1px 2px -1px rgb(0 0 0 / 0.02);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+@keyframes nisab-rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@utility rise {
+  animation: nisab-rise 0.6s cubic-bezier(0.32, 0.72, 0, 1) both;
+}
